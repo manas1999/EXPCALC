@@ -1,15 +1,12 @@
 import numpy as np
 import cv2 
 import random
-#from imutils import contours
-#import imutils
 import sys
 a = ""
 b=0;
 dig_count = 0;
 drawing = False
 drawing = False
-#img3 = img3+255
 cursor = -100;
 sys.path.insert(0,"C:\\Users\\manas madine\\Desktop")
 from dnn_softmax import *
@@ -80,9 +77,6 @@ def draw(event,x,y,flags,param):
         img4=255-img4
         x = img4.reshape(784,1).astype('float32') / 255
         AL,_=L_layer_forward(x,parameters)
-        #cv2.putText(img,str(np.argmax(AL)),(cursor+100,820),font1,4,(0,0,255),10,cv2.LINE_AA)
-        #cursor = cursor +100
-        #a = a+str(np.argmax(AL))
         b = b*10+np.argmax(AL)
         drawing = False
         img3[img3!=255]=255
