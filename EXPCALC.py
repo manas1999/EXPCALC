@@ -5,20 +5,6 @@ window_name ='MANAS'
 cv2.namedWindow(window_name)
 cap = cv2.VideoCapture(0)
 img = np.zeros((1012,1012,3),np.uint8)
-#while True:
-#    _, frame= cap.read()
-#    frame2 = cv2.cvtColor(frame,cv2.COLOR_BGR2HSV)
-#    mask = cv2.inRange(frame2,np.array([0,200,0]),np.array([0,255,0]))
-#    cv2.imshow("frames",frame)
-#    cv2.imshow("mask",mask)
-#    if cv2.waitKey(20)==27:
-#            break
-#cv2.destroyAllWindows()
-#print("hello world")
-
-#for i in dir(cv2):
-#    print(i)
-
 def draw(event,x,y,flags,param):
     global drawing
     if event == cv2.EVENT_LBUTTONDOWN :
@@ -39,11 +25,6 @@ def main():
         
         if cv2.waitKey(20)==27:
             break
-#    frame2 = cv2.cvtColor(window_name,cv2.COLOR_BGR2HSV)
-#    mask = cv2.inRange(frame2,np.array([0,200,0]),np.array([0,255,0]))
-#    cv2.imshow("mask",mask)  
-#    if cv2.waitKey(20)==27:
-#        cv2.destroyAllWindows()
 
 if __name__ == "__main__":
     main()
